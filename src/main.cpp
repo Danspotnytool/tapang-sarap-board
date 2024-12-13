@@ -21,7 +21,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // API connection setup
 String API_URL = "http://192.168.9.171:5000";
-EasyHTTP http("Baynosa", "Peninsula.1");
+EasyHTTP http("danieljohnbyns", "mahabangpassword");
 
 // Monitor setup
 String monitorId;
@@ -157,6 +157,12 @@ void loop() {
 		display.setTextSize(2);
 		display.setCursor(0, 10);
 		display.println(temperature);
+		display.setCursor(0, 30);
+		display.setTextSize(1);
+		display.println("Monitor ID:");
+		display.setTextSize(1);
+		display.setCursor(0, 40);
+		display.println(monitorId + " - " + code);
 		display.display();
 	};
 };
